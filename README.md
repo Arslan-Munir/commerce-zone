@@ -5,9 +5,9 @@ Preview: https://commerce-zone.web.app/
 
 Versions:
 
-	Node 						 v10.15.1
-	Angular CLI 				 8.3.25
-	Typescript					 3.8.3
+	Node 			     v10.15.1
+	Angular CLI 	  	     8.3.25
+	Typescript		     3.8.3
 	@angular-devkit/architect    0.803.25
 	@angular-devkit/core         8.3.25
 	@angular-devkit/schematics   8.3.25
@@ -30,5 +30,5 @@ Versions:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 Contant me:
 
-email: arslanmunir987@gmail.com
-whatsapp: +923325585826
+	email: arslanmunir987@gmail.com
+	whatsapp: +923325585826
