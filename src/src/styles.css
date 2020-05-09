@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '~font-awesome/css/font-awesome.css';
+
+p{
+    padding:20px;
+}
+
+.product-view{
+    padding-top: 20px;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: #577119;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #577119;
+    border-color: #577119;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #577119;
+    border-color: #577119;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #63831a;
+    border-color: #63831a;
+}

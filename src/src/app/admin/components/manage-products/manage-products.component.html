@@ -1,0 +1,53 @@
+
+<div class="container product-view">
+    <p>
+        <a 
+            class="btn btn-primary" 
+            routerLink="/admin/manage-products/add">
+            New Product
+        </a>
+    </p>
+
+    <!-- <div class="form-group">
+        <input 
+            type="text" 
+            placeholder="Search..." 
+            class="form-control"
+            #query
+            (keyup)='filter(query.value)'>
+    </div> -->
+
+    <table
+        class="table table-bordered table-hover"
+        *ngIf='products$'>
+            <thead class="thead-dark">
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  
+                    scope="row" 
+                    *ngFor="let p of (products$ | async)">
+                        <td scope="col">{{p.value.title}}</td>
+                        <td scope="col">{{p.value.price}}</td>
+                        <td scope="col">
+                            <button 
+                                type="button"
+                                class="btn btn-primary btn-sm"
+                                [routerLink]="['/admin/manage-products/', p.key]">
+                                Edit
+                            </button>
+                            <button 
+                                type="button"
+                                class="btn btn-warning btn-sm"
+                                (click)="delete(p.key)">
+                                Delete
+                            </button>
+                        </td>
+                </tr>
+            </tbody>
+    </table>
+</div>

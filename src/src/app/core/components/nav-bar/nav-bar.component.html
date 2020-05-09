@@ -1,0 +1,40 @@
+<nav class="container navbar navbar-expand-lg navbar-light bg-light">
+    <ul ngbNav class="navbar-nav mr-auto">
+        <li [ngbNavItem]=1>
+            <a ngbNavLink routerLink="/">
+                <mat-icon>home</mat-icon>
+            </a>
+        </li>
+        <li [ngbNavItem]=2>
+            <a ngbNavLink routerLink='/shopping-cart'>
+                <mat-icon>shopping_cart</mat-icon>
+                <span 
+                    class="badge badge-pill badge-warning" 
+                    *ngIf="cart$ | async as cart">
+                        {{cart.totalItemsCount}}
+                </span>
+            </a>
+        </li>
+    </ul>
+
+    <ul ngbNav class="navbar-nav">
+        <li *ngIf="appUser; else anonymousUser" ngbDropdown [ngbNavItem]=1>
+            <a ngbDropdownToggle class="nav-link" href (click)="false">{{appUser.name}}</a>
+            <div ngbDropdownMenu>
+                <a ngbDropdownItem routerLink='/my-orders'>My Orders</a>
+                <ng-container *ngIf="appUser.isAdmin">
+                    <a ngbDropdownItem routerLink='admin/manage-products'>Manage Products</a>
+                    <a ngbDropdownItem routerLink='admin/manage-orders'>Manage Orders</a>
+                </ng-container>
+                <a ngbDropdownItem routerLink='/' (click)="logOut()">Logout</a>
+            </div>
+        </li>
+    
+        <ng-template #anonymousUser>
+            <li [ngbNavItem]=3>
+                <a ngbNavLink routerLink='/login'>Login</a>
+            </li>
+        </ng-template>
+    </ul>
+
+</nav>

@@ -1,0 +1,15 @@
+<div class="row">
+    <button 
+        class="btn btn-success btn-circle" 
+        (click)='addToCart()'>
+        <mat-icon>add</mat-icon>
+    </button>
+    <h5 class="d-inline-block align-middle">
+        {{shoppingCart.getQuantity(product)}} in cart
+    </h5>
+    <button 
+        class="btn btn-danger btn-circle" 
+        (click)='removeFromCart()'>
+        <mat-icon>remove</mat-icon>
+    </button>
+</div>

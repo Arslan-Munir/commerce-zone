@@ -1,0 +1,22 @@
+<div class="container product-view">
+    <div class="row">
+        <div class="col col-md-3" >
+            <product-filter
+                [show-all-category-text]='products.length>0' 
+                [category]='categoryParam'>
+            </product-filter>
+        </div>
+        
+        <div 
+            class="col col-md-8" 
+            *ngIf="cart$ | async as cart">
+            <ng-container
+                *ngFor='let product of filteredProducts'>
+                    <product-card 
+                        [product]='product' 
+                        [shopping-cart]='cart'>
+                    </product-card>
+            </ng-container>
+        </div>
+    </div>
+</div>
